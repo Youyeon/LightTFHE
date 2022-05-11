@@ -6,6 +6,8 @@ set(SRCS
     lweparams.cpp
     lwesamples.cpp
     numeric-functions.cpp
+    tfhe_gate_bootstrapping.cpp
+    tfhe_gate_bootstrapping_structures.cpp
 )
 
 add_library(tfhe STATIC ${SRCS} ${TFHE_HEADERS})

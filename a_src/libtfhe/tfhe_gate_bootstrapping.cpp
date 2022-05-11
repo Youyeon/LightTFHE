@@ -1,7 +1,7 @@
 //#include <cstdio>
 //#include <iostream>
 #include "tfhe.h"
-#include "tfhe_garbage_collector.h"
+//#include "tfhe_garbage_collector.h"
 
 using namespace std;
 
@@ -109,47 +109,47 @@ EXPORT void delete_gate_bootstrapping_parameters(TFheGateBootstrappingParameterS
 // }
 
 /** deletes a gate bootstrapping secret key */
-EXPORT void delete_gate_bootstrapping_secret_keyset(TFheGateBootstrappingSecretKeySet *keyset) {
-    LweKey *lwe_key = (LweKey *) keyset->lwe_key;
-    TGswKey *tgsw_key = (TGswKey *) keyset->tgsw_key;
-    LweBootstrappingKey *bk = (LweBootstrappingKey *) keyset->cloud.bk;
-    LweBootstrappingKeyFFT *bkFFT = (LweBootstrappingKeyFFT *) keyset->cloud.bkFFT;
-    if (bkFFT) delete_LweBootstrappingKeyFFT(bkFFT);
-    if (bk) delete_LweBootstrappingKey(bk);
-    delete_TGswKey(tgsw_key);
-    delete_LweKey(lwe_key);
-    delete keyset;
-}
+// EXPORT void delete_gate_bootstrapping_secret_keyset(TFheGateBootstrappingSecretKeySet *keyset) {
+//     LweKey *lwe_key = (LweKey *) keyset->lwe_key;
+//     TGswKey *tgsw_key = (TGswKey *) keyset->tgsw_key;
+//     LweBootstrappingKey *bk = (LweBootstrappingKey *) keyset->cloud.bk;
+//     LweBootstrappingKeyFFT *bkFFT = (LweBootstrappingKeyFFT *) keyset->cloud.bkFFT;
+//     if (bkFFT) delete_LweBootstrappingKeyFFT(bkFFT);
+//     if (bk) delete_LweBootstrappingKey(bk);
+//     delete_TGswKey(tgsw_key);
+//     delete_LweKey(lwe_key);
+//     delete keyset;
+// }
 
-/** deletes a gate bootstrapping cloud key */
-EXPORT void delete_gate_bootstrapping_cloud_keyset(TFheGateBootstrappingCloudKeySet *keyset) {
-    LweBootstrappingKey *bk = (LweBootstrappingKey *) keyset->bk;
-    LweBootstrappingKeyFFT *bkFFT = (LweBootstrappingKeyFFT *) keyset->bkFFT;
-    if (bkFFT) delete_LweBootstrappingKeyFFT(bkFFT);
-    if (bk) delete_LweBootstrappingKey(bk);
-    delete keyset;
-}
+// // /** deletes a gate bootstrapping cloud key */
+// EXPORT void delete_gate_bootstrapping_cloud_keyset(TFheGateBootstrappingCloudKeySet *keyset) {
+//     LweBootstrappingKey *bk = (LweBootstrappingKey *) keyset->bk;
+//     LweBootstrappingKeyFFT *bkFFT = (LweBootstrappingKeyFFT *) keyset->bkFFT;
+//     if (bkFFT) delete_LweBootstrappingKeyFFT(bkFFT);
+//     if (bk) delete_LweBootstrappingKey(bk);
+//     delete keyset;
+// }
 
 /** generate a new unititialized ciphertext */
 EXPORT LweSample *new_gate_bootstrapping_ciphertext(const TFheGateBootstrappingParameterSet *params) {
     return new_LweSample(params->in_out_params);
 }
 
-/** generate a new unititialized ciphertext array of length nbelems */
+// /** generate a new unititialized ciphertext array of length nbelems */
 EXPORT LweSample *
 new_gate_bootstrapping_ciphertext_array(int32_t nbelems, const TFheGateBootstrappingParameterSet *params) {
     return new_LweSample_array(nbelems, params->in_out_params);
 }
 
-/** deletes a ciphertext */
-EXPORT void delete_gate_bootstrapping_ciphertext(LweSample *sample) {
-    delete_LweSample(sample);
-}
+// /** deletes a ciphertext */
+// EXPORT void delete_gate_bootstrapping_ciphertext(LweSample *sample) {
+//     delete_LweSample(sample);
+// }
 
-/** deletes a ciphertext array of length nbelems */
-EXPORT void delete_gate_bootstrapping_ciphertext_array(int32_t nbelems, LweSample *samples) {
-    delete_LweSample_array(nbelems, samples);
-}
+// /** deletes a ciphertext array of length nbelems */
+// EXPORT void delete_gate_bootstrapping_ciphertext_array(int32_t nbelems, LweSample *samples) {
+//     delete_LweSample_array(nbelems, samples);
+// }
 
 /** encrypts a boolean */
 EXPORT void bootsSymEncrypt(LweSample *result, int32_t message, const TFheGateBootstrappingSecretKeySet *key) {

@@ -11,20 +11,22 @@ project(tfhe)
 # -std=c99 seems to be required in Travis tests for whatever reason
 set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -std=c99")
 
-set(CMAKE_CXX_FLAGS_DEBUG "${CLANG_FLAGS} -std=gnu++11 -g3 -O0 -Wall -Werror")
-set(CMAKE_C_FLAGS_DEBUG "-g3 -O0 -Wall -Werror")
+set(CMAKE_CXX_FLAGS_DEBUG "${CLANG_FLAGS} -std=gnu++11 -g3 -O0 -Wall -Werror -nostdinc -fvisibility=hidden -fpie -fstack-protector -I/opt/intel/sgxsdk/include -I/opt/intel/sgxsdk/include/libcxx -I/opt/intel/sgxsdk/include/tlibc -nostdinc++")
+set(CMAKE_C_FLAGS_DEBUG "-g3 -O0 -Wall -Werror -nostdinc -fvisibility=hidden -fpie -fstack-protector -I/opt/intel/sgxsdk/include -I/opt/intel/sgxsdk/include/libcxx -I/opt/intel/sgxsdk/include/tlibc")
 
 set(CMAKE_CXX_FLAGS_OPTIM "${CLANG_FLAGS} -std=gnu++11 -g3 -march=native -O2 -DNDEBUG -funroll-loops -Wall -Werror -nostdinc -fvisibility=hidden -fpie -fstack-protector -I/opt/intel/sgxsdk/include -I/opt/intel/sgxsdk/include/libcxx -I/opt/intel/sgxsdk/include/tlibc -nostdinc++")
 set(CMAKE_C_FLAGS_OPTIM "-g3 -march=native -O3 -DNDEBUG -funroll-loops -Wall -Werror -nostdinc -fvisibility=hidden -fpie -fstack-protector -I/opt/intel/sgxsdk/include -I/opt/intel/sgxsdk/include/libcxx -I/opt/intel/sgxsdk/include/tlibc")
 
-set(CMAKE_CXX_FLAGS_RELEASE "${CLANG_FLAGS} -std=gnu++11 -g0 -march=native -O2 -DNDEBUG -funroll-loops -Wall -Werror")
-set(CMAKE_C_FLAGS_RELEASE "-g0 -march=native -O3 -DNDEBUG -funroll-loops -Wall -Werror")
+set(CMAKE_CXX_FLAGS_RELEASE "${CLANG_FLAGS} -std=gnu++11 -g0 -march=native -O2 -DNDEBUG -funroll-loops -Wall -Werror -nostdinc -fvisibility=hidden -fpie -fstack-protector -I/opt/intel/sgxsdk/include -I/opt/intel/sgxsdk/include/libcxx -I/opt/intel/sgxsdk/include/tlibc -nostdinc++")
+set(CMAKE_C_FLAGS_RELEASE "-g0 -march=native -O3 -DNDEBUG -funroll-loops -Wall -Werror -nostdinc -fvisibility=hidden -fpie -fstack-protector -I/opt/intel/sgxsdk/include -I/opt/intel/sgxsdk/include/libcxx -I/opt/intel/sgxsdk/include/tlibc")
 
 set(CMAKE_INSTALL_OLDINCLUDEDIR "/opt/intel/sgxsdk/include")
 
 
 include_directories("include")
 file(GLOB TFHE_HEADERS include/*.h)
+
+set(CMAKE_INSTALL_PREFIX "~/mytfhe")
 
 install(FILES ${TFHE_HEADERS}
     DESTINATION ~/mytfhe/include/tfhe

@@ -6,7 +6,7 @@
 
 #include "tfhe_core.h"
 
-// #include "numeric_functions.h"
+#include "numeric_functions.h"
 
 // #include "polynomials_arithmetic.h"
 // #include "lagrangehalfc_arithmetic.h"
@@ -17,9 +17,11 @@
 
 // #include "tgsw_functions.h"
 
-// #include "lwekeyswitch.h"
+#include "lwekeyswitch.h"
 
-// #include "lwebootstrappingkey.h"
+#include "lwebootstrappingkey.h"
+
+#include "tfhe_gate_bootstrapping_structures.h"
 
 // #include "tfhe_gate_bootstrapping_functions.h"
 
