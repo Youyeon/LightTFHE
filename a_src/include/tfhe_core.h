@@ -15,7 +15,7 @@
 #define EXPORT
 #endif
 
-EXPORT void die_dramatically(const char* message);
+//EXPORT void die_dramatically(const char* message);
 
 
 // Idea:

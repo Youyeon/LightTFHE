@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include <iostream>
+//#include <iostream>
 #include <random>
 #include <cassert>
 #include "tlwe_functions.h"

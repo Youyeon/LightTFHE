@@ -1,7 +1,7 @@
 #ifndef TFHE_TEST_ENVIRONMENT
 
 #include <cstdlib>
-#include <iostream>
+//#include <iostream>
 #include <random>
 #include <cassert>
 #include "tfhe_core.h"

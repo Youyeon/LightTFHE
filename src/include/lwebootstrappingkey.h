@@ -79,8 +79,8 @@ EXPORT void destroy_LweBootstrappingKey_array(int32_t nbelts, LweBootstrappingKe
  
 //allocates and initialize the LweBootstrappingKey structure
 //(equivalent of the C++ new)
-EXPORT LweBootstrappingKey* new_LweBootstrappingKey(const int32_t ks_t, const int32_t ks_basebit, const LweParams* in_out_params, const TGswParams* bk_params);
-EXPORT LweBootstrappingKey* new_LweBootstrappingKey_array(int32_t nbelts, const int32_t ks_t, const int32_t ks_basebit, const LweParams* in_out_params, const TGswParams* bk_params);
+// EXPORT LweBootstrappingKey* new_LweBootstrappingKey(const int32_t ks_t, const int32_t ks_basebit, const LweParams* in_out_params, const TGswParams* bk_params);
+// EXPORT LweBootstrappingKey* new_LweBootstrappingKey_array(int32_t nbelts, const int32_t ks_t, const int32_t ks_basebit, const LweParams* in_out_params, const TGswParams* bk_params);
 
 //destroys and frees the LweBootstrappingKey structure
 //(equivalent of the C++ delete)
@@ -107,8 +107,8 @@ EXPORT void destroy_LweBootstrappingKeyFFT_array(int32_t nbelts, LweBootstrappin
  
 //allocates and initialize the LweBootstrappingKeyFFT structure
 //(equivalent of the C++ new)
-EXPORT LweBootstrappingKeyFFT* new_LweBootstrappingKeyFFT(const LweBootstrappingKey* bk);
-EXPORT LweBootstrappingKeyFFT* new_LweBootstrappingKeyFFT_array(int32_t nbelts, const LweBootstrappingKey* bk);
+// EXPORT LweBootstrappingKeyFFT* new_LweBootstrappingKeyFFT(const LweBootstrappingKey* bk);
+// EXPORT LweBootstrappingKeyFFT* new_LweBootstrappingKeyFFT_array(int32_t nbelts, const LweBootstrappingKey* bk);
 
 //destroys and frees the LweBootstrappingKeyFFT structure
 //(equivalent of the C++ delete)
