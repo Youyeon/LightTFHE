@@ -46,5 +46,10 @@ EXPORT void tfhe_random_generator_setSeed(uint32_t* values, int32_t size);
 // EXPORT void tfhe_bootstrap_woKS_FFT(LweSample* result, const LweBootstrappingKeyFFT* bk, Torus32 mu, const LweSample* x);
 // EXPORT void tfhe_bootstrap_FFT(LweSample* result, const LweBootstrappingKeyFFT* bk, Torus32 mu, const LweSample* x);
 
+EXPORT void delete_gate_bootstrapping_parameters(TFheGateBootstrappingParameterSet *params);
+EXPORT LweSample *new_gate_bootstrapping_ciphertext(const TFheGateBootstrappingParameterSet *params);
+EXPORT LweSample *new_gate_bootstrapping_ciphertext_array(int32_t nbelems, const TFheGateBootstrappingParameterSet *params);
+EXPORT void bootsSymEncrypt(LweSample *result, int32_t message, const TFheGateBootstrappingSecretKeySet *key);
+EXPORT int32_t bootsSymDecrypt(const LweSample *sample, const TFheGateBootstrappingSecretKeySet *key);
 
 #endif //TFHE_H
