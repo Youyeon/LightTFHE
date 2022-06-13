@@ -26,10 +26,10 @@ set(CMAKE_INSTALL_OLDINCLUDEDIR "/opt/intel/sgxsdk/include")
 include_directories("include")
 file(GLOB TFHE_HEADERS include/*.h)
 
-set(CMAKE_INSTALL_PREFIX "~/mytfhe")
+set(CMAKE_INSTALL_PREFIX "/home/yyjoo/mytfhe")
 
 install(FILES ${TFHE_HEADERS}
-    DESTINATION ~/mytfhe/include/tfhe
+    DESTINATION /home/yyjoo/mytfhe/include/tfhe
     PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
 
 

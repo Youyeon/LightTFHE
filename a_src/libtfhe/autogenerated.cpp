@@ -7,63 +7,63 @@ using namespace std;
 #include "polynomials.h" 
 //allocate memory space for a IntPolynomial
 
-EXPORT IntPolynomial* alloc_IntPolynomial() {
-    return (IntPolynomial*) malloc(sizeof(IntPolynomial));
-}
-EXPORT IntPolynomial* alloc_IntPolynomial_array(int32_t nbelts) {
-    return (IntPolynomial*) malloc(nbelts*sizeof(IntPolynomial));
-}
+// EXPORT IntPolynomial* alloc_IntPolynomial() {
+//     return (IntPolynomial*) malloc(sizeof(IntPolynomial));
+// }
+// EXPORT IntPolynomial* alloc_IntPolynomial_array(int32_t nbelts) {
+//     return (IntPolynomial*) malloc(nbelts*sizeof(IntPolynomial));
+// }
 
-//free memory space for a LweKey
-EXPORT void free_IntPolynomial(IntPolynomial* ptr) {
-    free(ptr);
-}
-EXPORT void free_IntPolynomial_array(int32_t nbelts, IntPolynomial* ptr) {
-    free(ptr);
-}
+// //free memory space for a LweKey
+// EXPORT void free_IntPolynomial(IntPolynomial* ptr) {
+//     free(ptr);
+// }
+// EXPORT void free_IntPolynomial_array(int32_t nbelts, IntPolynomial* ptr) {
+//     free(ptr);
+// }
 
-//initialize the key structure
-//(equivalent of the C++ constructor)
-EXPORT void init_IntPolynomial(IntPolynomial* obj, const int32_t N) {
-    new(obj) IntPolynomial(N);
-}
-EXPORT void init_IntPolynomial_array(int32_t nbelts, IntPolynomial* obj, const int32_t N) {
-    for (int32_t i=0; i<nbelts; i++) {
-	new(obj+i) IntPolynomial(N);
-    }
-}
+// //initialize the key structure
+// //(equivalent of the C++ constructor)
+// EXPORT void init_IntPolynomial(IntPolynomial* obj, const int32_t N) {
+//     new(obj) IntPolynomial(N);
+// }
+// EXPORT void init_IntPolynomial_array(int32_t nbelts, IntPolynomial* obj, const int32_t N) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	new(obj+i) IntPolynomial(N);
+//     }
+// }
 
-//destroys the IntPolynomial structure
-//(equivalent of the C++ destructor)
-EXPORT void destroy_IntPolynomial(IntPolynomial* obj) {
-    obj->~IntPolynomial();
-}
-EXPORT void destroy_IntPolynomial_array(int32_t nbelts, IntPolynomial* obj) {
-    for (int32_t i=0; i<nbelts; i++) {
-	(obj+i)->~IntPolynomial();
-    }
-}
+// //destroys the IntPolynomial structure
+// //(equivalent of the C++ destructor)
+// EXPORT void destroy_IntPolynomial(IntPolynomial* obj) {
+//     obj->~IntPolynomial();
+// }
+// EXPORT void destroy_IntPolynomial_array(int32_t nbelts, IntPolynomial* obj) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	(obj+i)->~IntPolynomial();
+//     }
+// }
  
-//allocates and initialize the IntPolynomial structure
-//(equivalent of the C++ new)
-EXPORT IntPolynomial* new_IntPolynomial(const int32_t N) {
-    return new IntPolynomial(N);
-}
-EXPORT IntPolynomial* new_IntPolynomial_array(int32_t nbelts, const int32_t N) {
-    IntPolynomial* obj = alloc_IntPolynomial_array(nbelts);
-    init_IntPolynomial_array(nbelts,obj,N);
-    return obj;
-}
+// //allocates and initialize the IntPolynomial structure
+// //(equivalent of the C++ new)
+// EXPORT IntPolynomial* new_IntPolynomial(const int32_t N) {
+//     return new IntPolynomial(N);
+// }
+// EXPORT IntPolynomial* new_IntPolynomial_array(int32_t nbelts, const int32_t N) {
+//     IntPolynomial* obj = alloc_IntPolynomial_array(nbelts);
+//     init_IntPolynomial_array(nbelts,obj,N);
+//     return obj;
+// }
 
-//destroys and frees the IntPolynomial structure
-//(equivalent of the C++ delete)
-EXPORT void delete_IntPolynomial(IntPolynomial* obj) {
-    delete obj;
-}
-EXPORT void delete_IntPolynomial_array(int32_t nbelts, IntPolynomial* obj) {
-    destroy_IntPolynomial_array(nbelts,obj);
-    free_IntPolynomial_array(nbelts,obj);
-}
+// //destroys and frees the IntPolynomial structure
+// //(equivalent of the C++ delete)
+// EXPORT void delete_IntPolynomial(IntPolynomial* obj) {
+//     delete obj;
+// }
+// EXPORT void delete_IntPolynomial_array(int32_t nbelts, IntPolynomial* obj) {
+//     destroy_IntPolynomial_array(nbelts,obj);
+//     free_IntPolynomial_array(nbelts,obj);
+// }
 
 #include "lwebootstrappingkey.h" 
 
@@ -132,66 +132,66 @@ EXPORT void delete_LweParams_array(int32_t nbelts, LweParams* obj) {
     free_LweParams_array(nbelts,obj);
 }
 
-#include "tgsw.h" 
+//#include "tgsw.h" 
 //allocate memory space for a TGswKey
 
-EXPORT TGswKey* alloc_TGswKey() {
-    return (TGswKey*) malloc(sizeof(TGswKey));
-}
-EXPORT TGswKey* alloc_TGswKey_array(int32_t nbelts) {
-    return (TGswKey*) malloc(nbelts*sizeof(TGswKey));
-}
+// EXPORT TGswKey* alloc_TGswKey() {
+//     return (TGswKey*) malloc(sizeof(TGswKey));
+// }
+// EXPORT TGswKey* alloc_TGswKey_array(int32_t nbelts) {
+//     return (TGswKey*) malloc(nbelts*sizeof(TGswKey));
+// }
 
-//free memory space for a LweKey
-EXPORT void free_TGswKey(TGswKey* ptr) {
-    free(ptr);
-}
-EXPORT void free_TGswKey_array(int32_t nbelts, TGswKey* ptr) {
-    free(ptr);
-}
+// //free memory space for a LweKey
+// EXPORT void free_TGswKey(TGswKey* ptr) {
+//     free(ptr);
+// }
+// EXPORT void free_TGswKey_array(int32_t nbelts, TGswKey* ptr) {
+//     free(ptr);
+// }
 
-//initialize the key structure
-//(equivalent of the C++ constructor)
-EXPORT void init_TGswKey(TGswKey* obj, const TGswParams* params) {
-    new(obj) TGswKey(params);
-}
-EXPORT void init_TGswKey_array(int32_t nbelts, TGswKey* obj, const TGswParams* params) {
-    for (int32_t i=0; i<nbelts; i++) {
-	new(obj+i) TGswKey(params);
-    }
-}
+// //initialize the key structure
+// //(equivalent of the C++ constructor)
+// EXPORT void init_TGswKey(TGswKey* obj, const TGswParams* params) {
+//     new(obj) TGswKey(params);
+// }
+// EXPORT void init_TGswKey_array(int32_t nbelts, TGswKey* obj, const TGswParams* params) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	new(obj+i) TGswKey(params);
+//     }
+// }
 
-//destroys the TGswKey structure
-//(equivalent of the C++ destructor)
-EXPORT void destroy_TGswKey(TGswKey* obj) {
-    obj->~TGswKey();
-}
-EXPORT void destroy_TGswKey_array(int32_t nbelts, TGswKey* obj) {
-    for (int32_t i=0; i<nbelts; i++) {
-	(obj+i)->~TGswKey();
-    }
-}
+// //destroys the TGswKey structure
+// //(equivalent of the C++ destructor)
+// EXPORT void destroy_TGswKey(TGswKey* obj) {
+//     obj->~TGswKey();
+// }
+// EXPORT void destroy_TGswKey_array(int32_t nbelts, TGswKey* obj) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	(obj+i)->~TGswKey();
+//     }
+// }
  
-//allocates and initialize the TGswKey structure
-//(equivalent of the C++ new)
-EXPORT TGswKey* new_TGswKey(const TGswParams* params) {
-    return new TGswKey(params);
-}
-EXPORT TGswKey* new_TGswKey_array(int32_t nbelts, const TGswParams* params) {
-    TGswKey* obj = alloc_TGswKey_array(nbelts);
-    init_TGswKey_array(nbelts,obj,params);
-    return obj;
-}
+// //allocates and initialize the TGswKey structure
+// //(equivalent of the C++ new)
+// EXPORT TGswKey* new_TGswKey(const TGswParams* params) {
+//     return new TGswKey(params);
+// }
+// EXPORT TGswKey* new_TGswKey_array(int32_t nbelts, const TGswParams* params) {
+//     TGswKey* obj = alloc_TGswKey_array(nbelts);
+//     init_TGswKey_array(nbelts,obj,params);
+//     return obj;
+// }
 
-//destroys and frees the TGswKey structure
-//(equivalent of the C++ delete)
-EXPORT void delete_TGswKey(TGswKey* obj) {
-    delete obj;
-}
-EXPORT void delete_TGswKey_array(int32_t nbelts, TGswKey* obj) {
-    destroy_TGswKey_array(nbelts,obj);
-    free_TGswKey_array(nbelts,obj);
-}
+// //destroys and frees the TGswKey structure
+// //(equivalent of the C++ delete)
+// EXPORT void delete_TGswKey(TGswKey* obj) {
+//     delete obj;
+// }
+// EXPORT void delete_TGswKey_array(int32_t nbelts, TGswKey* obj) {
+//     destroy_TGswKey_array(nbelts,obj);
+//     free_TGswKey_array(nbelts,obj);
+// }
 #include "tgsw.h" 
 //allocate memory space for a TGswParams
 
@@ -316,60 +316,60 @@ EXPORT void delete_TLweParams_array(int32_t nbelts, TLweParams* obj) {
 #include "polynomials.h" 
 //allocate memory space for a TorusPolynomial
 
-EXPORT TorusPolynomial* alloc_TorusPolynomial() {
-    return (TorusPolynomial*) malloc(sizeof(TorusPolynomial));
-}
-EXPORT TorusPolynomial* alloc_TorusPolynomial_array(int32_t nbelts) {
-    return (TorusPolynomial*) malloc(nbelts*sizeof(TorusPolynomial));
-}
+// EXPORT TorusPolynomial* alloc_TorusPolynomial() {
+//     return (TorusPolynomial*) malloc(sizeof(TorusPolynomial));
+// }
+// EXPORT TorusPolynomial* alloc_TorusPolynomial_array(int32_t nbelts) {
+//     return (TorusPolynomial*) malloc(nbelts*sizeof(TorusPolynomial));
+// }
 
-//free memory space for a LweKey
-EXPORT void free_TorusPolynomial(TorusPolynomial* ptr) {
-    free(ptr);
-}
-EXPORT void free_TorusPolynomial_array(int32_t nbelts, TorusPolynomial* ptr) {
-    free(ptr);
-}
+// //free memory space for a LweKey
+// EXPORT void free_TorusPolynomial(TorusPolynomial* ptr) {
+//     free(ptr);
+// }
+// EXPORT void free_TorusPolynomial_array(int32_t nbelts, TorusPolynomial* ptr) {
+//     free(ptr);
+// }
 
-//initialize the key structure
-//(equivalent of the C++ constructor)
-EXPORT void init_TorusPolynomial(TorusPolynomial* obj, const int32_t N) {
-    new(obj) TorusPolynomial(N);
-}
-EXPORT void init_TorusPolynomial_array(int32_t nbelts, TorusPolynomial* obj, const int32_t N) {
-    for (int32_t i=0; i<nbelts; i++) {
-	new(obj+i) TorusPolynomial(N);
-    }
-}
+// //initialize the key structure
+// //(equivalent of the C++ constructor)
+// EXPORT void init_TorusPolynomial(TorusPolynomial* obj, const int32_t N) {
+//     new(obj) TorusPolynomial(N);
+// }
+// EXPORT void init_TorusPolynomial_array(int32_t nbelts, TorusPolynomial* obj, const int32_t N) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	new(obj+i) TorusPolynomial(N);
+//     }
+// }
 
-//destroys the TorusPolynomial structure
-//(equivalent of the C++ destructor)
-EXPORT void destroy_TorusPolynomial(TorusPolynomial* obj) {
-    obj->~TorusPolynomial();
-}
-EXPORT void destroy_TorusPolynomial_array(int32_t nbelts, TorusPolynomial* obj) {
-    for (int32_t i=0; i<nbelts; i++) {
-	(obj+i)->~TorusPolynomial();
-    }
-}
+// //destroys the TorusPolynomial structure
+// //(equivalent of the C++ destructor)
+// EXPORT void destroy_TorusPolynomial(TorusPolynomial* obj) {
+//     obj->~TorusPolynomial();
+// }
+// EXPORT void destroy_TorusPolynomial_array(int32_t nbelts, TorusPolynomial* obj) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	(obj+i)->~TorusPolynomial();
+//     }
+// }
  
-//allocates and initialize the TorusPolynomial structure
-//(equivalent of the C++ new)
-EXPORT TorusPolynomial* new_TorusPolynomial(const int32_t N) {
-    return new TorusPolynomial(N);
-}
-EXPORT TorusPolynomial* new_TorusPolynomial_array(int32_t nbelts, const int32_t N) {
-    TorusPolynomial* obj = alloc_TorusPolynomial_array(nbelts);
-    init_TorusPolynomial_array(nbelts,obj,N);
-    return obj;
-}
+// //allocates and initialize the TorusPolynomial structure
+// //(equivalent of the C++ new)
+// EXPORT TorusPolynomial* new_TorusPolynomial(const int32_t N) {
+//     return new TorusPolynomial(N);
+// }
+// EXPORT TorusPolynomial* new_TorusPolynomial_array(int32_t nbelts, const int32_t N) {
+//     TorusPolynomial* obj = alloc_TorusPolynomial_array(nbelts);
+//     init_TorusPolynomial_array(nbelts,obj,N);
+//     return obj;
+// }
 
-//destroys and frees the TorusPolynomial structure
-//(equivalent of the C++ delete)
-EXPORT void delete_TorusPolynomial(TorusPolynomial* obj) {
-    delete obj;
-}
-EXPORT void delete_TorusPolynomial_array(int32_t nbelts, TorusPolynomial* obj) {
-    destroy_TorusPolynomial_array(nbelts,obj);
-    free_TorusPolynomial_array(nbelts,obj);
-}
+// //destroys and frees the TorusPolynomial structure
+// //(equivalent of the C++ delete)
+// EXPORT void delete_TorusPolynomial(TorusPolynomial* obj) {
+//     delete obj;
+// }
+// EXPORT void delete_TorusPolynomial_array(int32_t nbelts, TorusPolynomial* obj) {
+//     destroy_TorusPolynomial_array(nbelts,obj);
+//     free_TorusPolynomial_array(nbelts,obj);
+// }

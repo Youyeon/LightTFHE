@@ -1,7 +1,7 @@
 #include "tfhe_core.h"
 #include "tlwe.h"
 #include "tgsw.h"
-#include "polynomials_arithmetic.h"
+//#include "polynomials_arithmetic.h"
 
 
 TGswParams::TGswParams(int32_t l, int32_t Bgbit, const TLweParams *tlwe_params) :
@@ -35,26 +35,26 @@ TGswParams::~TGswParams() {
 
 
 // same key as in TLwe
-TGswKey::TGswKey(const TGswParams *params) :
-        params(params), tlwe_params(params->tlwe_params), tlwe_key(tlwe_params) {
-    key = tlwe_key.key;
-}
+// TGswKey::TGswKey(const TGswParams *params) :
+//         params(params), tlwe_params(params->tlwe_params), tlwe_key(tlwe_params) {
+//     key = tlwe_key.key;
+// }
 
-TGswKey::~TGswKey() {
-}
+// TGswKey::~TGswKey() {
+// }
 
 
-TGswSampleFFT::TGswSampleFFT(const TGswParams *params, TLweSampleFFT *all_samples_raw) : k(params->tlwe_params->k),
-                                                                                         l(params->l) {
-    all_samples = all_samples_raw;
-    sample = new TLweSampleFFT *[(k + 1) * l];
+// TGswSampleFFT::TGswSampleFFT(const TGswParams *params, TLweSampleFFT *all_samples_raw) : k(params->tlwe_params->k),
+//                                                                                          l(params->l) {
+//     all_samples = all_samples_raw;
+//     sample = new TLweSampleFFT *[(k + 1) * l];
 
-    for (int32_t p = 0; p < (k + 1); ++p)
-        sample[p] = all_samples + p * l;
-}
+//     for (int32_t p = 0; p < (k + 1); ++p)
+//         sample[p] = all_samples + p * l;
+// }
 
-TGswSampleFFT::~TGswSampleFFT() {
-    delete[] sample;
-}
+// TGswSampleFFT::~TGswSampleFFT() {
+//     delete[] sample;
+// }
 
 

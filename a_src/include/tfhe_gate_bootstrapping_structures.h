@@ -48,6 +48,8 @@ struct TFheGateBootstrappingSecretKeySet {
     const TFheGateBootstrappingCloudKeySet cloud;
 #ifdef __cplusplus
 
+    TFheGateBootstrappingSecretKeySet();
+
     TFheGateBootstrappingSecretKeySet(
             const TFheGateBootstrappingParameterSet *const params,
             const LweBootstrappingKey *const bk,

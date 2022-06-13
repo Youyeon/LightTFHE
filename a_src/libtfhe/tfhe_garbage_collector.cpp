@@ -1,8 +1,10 @@
 #include "tfhe_garbage_collector.h"
 #include "lwe-functions.h"
-#include "tlwe_functions.h"
-#include "tgsw_functions.h"
+// #include "tlwe_functions.h"
+// #include "tgsw_functions.h"
 #include "tfhe_gate_bootstrapping_functions.h"
+#include "tlwe.h"
+#include "tgsw.h"
 
 using namespace std;
 
