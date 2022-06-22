@@ -159,8 +159,20 @@ EXPORT void bootsSymEncrypt(LweSample *result, int32_t message, const TFheGateBo
     lweSymEncrypt(result, mu, alpha, key->lwe_key);
 }
 
+EXPORT void bootsSymEncrypt_(LweSample *result, int32_t message, const LweKey *key) {
+    Torus32 _1s8 = modSwitchToTorus32(1, 8);
+    Torus32 mu = message ? _1s8 : -_1s8;
+    double alpha = key->params->alpha_min; //TODO: specify noise
+    lweSymEncrypt(result, mu, alpha, key);
+}
+
 /** decrypts a boolean */
 EXPORT int32_t bootsSymDecrypt(const LweSample *sample, const TFheGateBootstrappingSecretKeySet *key) {
     Torus32 mu = lwePhase(sample, key->lwe_key);
+    return (mu > 0 ? 1 : 0); //we have to do that because of the C binding
+}
+
+EXPORT int32_t bootsSymDecrypt_(const LweSample *sample, const LweKey *key) {
+    Torus32 mu = lwePhase(sample, key);
     return (mu > 0 ? 1 : 0); //we have to do that because of the C binding
 }

@@ -26,12 +26,14 @@ set(CMAKE_INSTALL_OLDINCLUDEDIR "/opt/intel/sgxsdk/include")
 include_directories("include")
 file(GLOB TFHE_HEADERS include/*.h)
 
-set(CMAKE_INSTALL_PREFIX "/home/yyjoo/mytfhe")
+set(CMAKE_INSTALL_PREFIX "~/mytfhe")
 
 install(FILES ${TFHE_HEADERS}
-    DESTINATION /home/yyjoo/mytfhe/include/tfhe
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/include/tfhe
     PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
-
+install(FILES build/libtfhe/libtfhe.a
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+    PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
 
 # include the lib and the tests
 add_subdirectory(libtfhe)

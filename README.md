@@ -1,6 +1,11 @@
 # TFHE
 Fast Fully Homomorphic Encryption Library over the Torus
 
+---
+## To install LightTFHE, move lightsrc
+[LightTFHE](https://github.com/youyeon/LightTFHE/lightsrc)
+---
+
 **version 1.1** -- *Updated security parameters release date: 2020.02.21*
 
 **version 1.0** -- *first release date: 2017.05.02*

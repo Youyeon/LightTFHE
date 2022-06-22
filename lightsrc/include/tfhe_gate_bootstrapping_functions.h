@@ -40,9 +40,11 @@ EXPORT LweSample *new_gate_bootstrapping_ciphertext_array(int32_t nbelems, const
 
 /** encrypts a boolean */
 EXPORT void bootsSymEncrypt(LweSample *result, int32_t message, const TFheGateBootstrappingSecretKeySet *params);
+EXPORT void bootsSymEncrypt_(LweSample *result, int32_t message, const LweKey *params);
 
 /** decrypts a boolean */
 EXPORT int32_t bootsSymDecrypt(const LweSample *sample, const TFheGateBootstrappingSecretKeySet *params);
+EXPORT int32_t bootsSymDecrypt_(const LweSample *sample, const LweKey *params);
 
 // /** bootstrapped Constant (true or false) trivial Gate */
 // EXPORT void bootsCONSTANT(LweSample *result, int32_t value, const TFheGateBootstrappingCloudKeySet *bk);
