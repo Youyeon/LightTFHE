@@ -9,9 +9,6 @@ set(SRCS
     numeric-functions.cpp
     tfhe_garbage_collector.cpp
     tfhe_gate_bootstrapping.cpp
-    tfhe_gate_bootstrapping_structures.cpp
-    tgsw.cpp
-    tlwe.cpp
 )
 
 add_library(tfhe STATIC ${SRCS} ${TFHE_HEADERS})

@@ -14,16 +14,16 @@
 #include "lwe-functions.h"
 
 // #include "tlwe_functions.h"
-#include "tlwe.h"
+//#include "tlwe.h"
 
 // #include "tgsw_functions.h"
-#include "tgsw.h"
+//#include "tgsw.h"
 
-#include "lwekeyswitch.h"
+//#include "lwekeyswitch.h"
 
-#include "lwebootstrappingkey.h"
+//#include "lwebootstrappingkey.h"
 
-#include "tfhe_gate_bootstrapping_structures.h"
+//#include "tfhe_gate_bootstrapping_structures.h"
 
 #include "tfhe_gate_bootstrapping_functions.h"
 

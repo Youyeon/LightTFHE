@@ -8,4 +8,4 @@ SGX-SDK is installed in your machine (path: `/opt/intel/sgxsdk`)
     cmake --build build
     sudo cmake --install build
 ```
-- then you can see tfhe header files & static library ${home}/mytfhe
+- then you can see tfhe header files & static library ${home}/mytfhe_sgx

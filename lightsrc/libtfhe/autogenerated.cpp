@@ -4,7 +4,7 @@
 #include <cstdlib>
 #include <new>
 using namespace std;
-#include "polynomials.h" 
+//#include "polynomials.h" 
 //allocate memory space for a IntPolynomial
 
 // EXPORT IntPolynomial* alloc_IntPolynomial() {
@@ -65,7 +65,7 @@ using namespace std;
 //     free_IntPolynomial_array(nbelts,obj);
 // }
 
-#include "lwebootstrappingkey.h" 
+//#include "lwebootstrappingkey.h" 
 
 
 
@@ -192,128 +192,128 @@ EXPORT void delete_LweParams_array(int32_t nbelts, LweParams* obj) {
 //     destroy_TGswKey_array(nbelts,obj);
 //     free_TGswKey_array(nbelts,obj);
 // }
-#include "tgsw.h" 
+//#include "tgsw.h" 
 //allocate memory space for a TGswParams
 
-EXPORT TGswParams* alloc_TGswParams() {
-    return (TGswParams*) malloc(sizeof(TGswParams));
-}
-EXPORT TGswParams* alloc_TGswParams_array(int32_t nbelts) {
-    return (TGswParams*) malloc(nbelts*sizeof(TGswParams));
-}
+// EXPORT TGswParams* alloc_TGswParams() {
+//     return (TGswParams*) malloc(sizeof(TGswParams));
+// }
+// EXPORT TGswParams* alloc_TGswParams_array(int32_t nbelts) {
+//     return (TGswParams*) malloc(nbelts*sizeof(TGswParams));
+// }
 
-//free memory space for a LweKey
-EXPORT void free_TGswParams(TGswParams* ptr) {
-    free(ptr);
-}
-EXPORT void free_TGswParams_array(int32_t nbelts, TGswParams* ptr) {
-    free(ptr);
-}
+// //free memory space for a LweKey
+// EXPORT void free_TGswParams(TGswParams* ptr) {
+//     free(ptr);
+// }
+// EXPORT void free_TGswParams_array(int32_t nbelts, TGswParams* ptr) {
+//     free(ptr);
+// }
 
-//initialize the key structure
-//(equivalent of the C++ constructor)
-EXPORT void init_TGswParams(TGswParams* obj, int32_t l, int32_t Bgbit, const TLweParams* tlwe_params) {
-    new(obj) TGswParams(l,Bgbit,tlwe_params);
-}
-EXPORT void init_TGswParams_array(int32_t nbelts, TGswParams* obj, int32_t l, int32_t Bgbit, const TLweParams* tlwe_params) {
-    for (int32_t i=0; i<nbelts; i++) {
-	new(obj+i) TGswParams(l,Bgbit,tlwe_params);
-    }
-}
+// //initialize the key structure
+// //(equivalent of the C++ constructor)
+// EXPORT void init_TGswParams(TGswParams* obj, int32_t l, int32_t Bgbit, const TLweParams* tlwe_params) {
+//     new(obj) TGswParams(l,Bgbit,tlwe_params);
+// }
+// EXPORT void init_TGswParams_array(int32_t nbelts, TGswParams* obj, int32_t l, int32_t Bgbit, const TLweParams* tlwe_params) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	new(obj+i) TGswParams(l,Bgbit,tlwe_params);
+//     }
+// }
 
-//destroys the TGswParams structure
-//(equivalent of the C++ destructor)
-EXPORT void destroy_TGswParams(TGswParams* obj) {
-    obj->~TGswParams();
-}
-EXPORT void destroy_TGswParams_array(int32_t nbelts, TGswParams* obj) {
-    for (int32_t i=0; i<nbelts; i++) {
-	(obj+i)->~TGswParams();
-    }
-}
+// //destroys the TGswParams structure
+// //(equivalent of the C++ destructor)
+// EXPORT void destroy_TGswParams(TGswParams* obj) {
+//     obj->~TGswParams();
+// }
+// EXPORT void destroy_TGswParams_array(int32_t nbelts, TGswParams* obj) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	(obj+i)->~TGswParams();
+//     }
+// }
  
-//allocates and initialize the TGswParams structure
-//(equivalent of the C++ new)
-EXPORT TGswParams* new_TGswParams(int32_t l, int32_t Bgbit, const TLweParams* tlwe_params) {
-    return new TGswParams(l,Bgbit,tlwe_params);
-}
-EXPORT TGswParams* new_TGswParams_array(int32_t nbelts, int32_t l, int32_t Bgbit, const TLweParams* tlwe_params) {
-    TGswParams* obj = alloc_TGswParams_array(nbelts);
-    init_TGswParams_array(nbelts,obj,l,Bgbit,tlwe_params);
-    return obj;
-}
+// //allocates and initialize the TGswParams structure
+// //(equivalent of the C++ new)
+// EXPORT TGswParams* new_TGswParams(int32_t l, int32_t Bgbit, const TLweParams* tlwe_params) {
+//     return new TGswParams(l,Bgbit,tlwe_params);
+// }
+// EXPORT TGswParams* new_TGswParams_array(int32_t nbelts, int32_t l, int32_t Bgbit, const TLweParams* tlwe_params) {
+//     TGswParams* obj = alloc_TGswParams_array(nbelts);
+//     init_TGswParams_array(nbelts,obj,l,Bgbit,tlwe_params);
+//     return obj;
+// }
 
-//destroys and frees the TGswParams structure
-//(equivalent of the C++ delete)
-EXPORT void delete_TGswParams(TGswParams* obj) {
-    delete obj;
-}
-EXPORT void delete_TGswParams_array(int32_t nbelts, TGswParams* obj) {
-    destroy_TGswParams_array(nbelts,obj);
-    free_TGswParams_array(nbelts,obj);
-}
-#include "tgsw.h" 
-#include "tlwe.h" 
+// //destroys and frees the TGswParams structure
+// //(equivalent of the C++ delete)
+// EXPORT void delete_TGswParams(TGswParams* obj) {
+//     delete obj;
+// }
+// EXPORT void delete_TGswParams_array(int32_t nbelts, TGswParams* obj) {
+//     destroy_TGswParams_array(nbelts,obj);
+//     free_TGswParams_array(nbelts,obj);
+// }
+//#include "tgsw.h" 
+//#include "tlwe.h" 
 //allocate memory space for a TLweParams
 
-EXPORT TLweParams* alloc_TLweParams() {
-    return (TLweParams*) malloc(sizeof(TLweParams));
-}
-EXPORT TLweParams* alloc_TLweParams_array(int32_t nbelts) {
-    return (TLweParams*) malloc(nbelts*sizeof(TLweParams));
-}
+// EXPORT TLweParams* alloc_TLweParams() {
+//     return (TLweParams*) malloc(sizeof(TLweParams));
+// }
+// EXPORT TLweParams* alloc_TLweParams_array(int32_t nbelts) {
+//     return (TLweParams*) malloc(nbelts*sizeof(TLweParams));
+// }
 
-//free memory space for a LweKey
-EXPORT void free_TLweParams(TLweParams* ptr) {
-    free(ptr);
-}
-EXPORT void free_TLweParams_array(int32_t nbelts, TLweParams* ptr) {
-    free(ptr);
-}
+// //free memory space for a LweKey
+// EXPORT void free_TLweParams(TLweParams* ptr) {
+//     free(ptr);
+// }
+// EXPORT void free_TLweParams_array(int32_t nbelts, TLweParams* ptr) {
+//     free(ptr);
+// }
 
-//initialize the key structure
-//(equivalent of the C++ constructor)
-EXPORT void init_TLweParams(TLweParams* obj, int32_t N, int32_t k, double alpha_min, double alpha_max) {
-    new(obj) TLweParams(N,k,alpha_min,alpha_max);
-}
-EXPORT void init_TLweParams_array(int32_t nbelts, TLweParams* obj, int32_t N, int32_t k, double alpha_min, double alpha_max) {
-    for (int32_t i=0; i<nbelts; i++) {
-	new(obj+i) TLweParams(N,k,alpha_min,alpha_max);
-    }
-}
+// //initialize the key structure
+// //(equivalent of the C++ constructor)
+// EXPORT void init_TLweParams(TLweParams* obj, int32_t N, int32_t k, double alpha_min, double alpha_max) {
+//     new(obj) TLweParams(N,k,alpha_min,alpha_max);
+// }
+// EXPORT void init_TLweParams_array(int32_t nbelts, TLweParams* obj, int32_t N, int32_t k, double alpha_min, double alpha_max) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	new(obj+i) TLweParams(N,k,alpha_min,alpha_max);
+//     }
+// }
 
-//destroys the TLweParams structure
-//(equivalent of the C++ destructor)
-EXPORT void destroy_TLweParams(TLweParams* obj) {
-    obj->~TLweParams();
-}
-EXPORT void destroy_TLweParams_array(int32_t nbelts, TLweParams* obj) {
-    for (int32_t i=0; i<nbelts; i++) {
-	(obj+i)->~TLweParams();
-    }
-}
+// //destroys the TLweParams structure
+// //(equivalent of the C++ destructor)
+// EXPORT void destroy_TLweParams(TLweParams* obj) {
+//     obj->~TLweParams();
+// }
+// EXPORT void destroy_TLweParams_array(int32_t nbelts, TLweParams* obj) {
+//     for (int32_t i=0; i<nbelts; i++) {
+// 	(obj+i)->~TLweParams();
+//     }
+// }
  
-//allocates and initialize the TLweParams structure
-//(equivalent of the C++ new)
-EXPORT TLweParams* new_TLweParams(int32_t N, int32_t k, double alpha_min, double alpha_max) {
-    return new TLweParams(N,k,alpha_min,alpha_max);
-}
-EXPORT TLweParams* new_TLweParams_array(int32_t nbelts, int32_t N, int32_t k, double alpha_min, double alpha_max) {
-    TLweParams* obj = alloc_TLweParams_array(nbelts);
-    init_TLweParams_array(nbelts,obj,N,k,alpha_min,alpha_max);
-    return obj;
-}
+// //allocates and initialize the TLweParams structure
+// //(equivalent of the C++ new)
+// EXPORT TLweParams* new_TLweParams(int32_t N, int32_t k, double alpha_min, double alpha_max) {
+//     return new TLweParams(N,k,alpha_min,alpha_max);
+// }
+// EXPORT TLweParams* new_TLweParams_array(int32_t nbelts, int32_t N, int32_t k, double alpha_min, double alpha_max) {
+//     TLweParams* obj = alloc_TLweParams_array(nbelts);
+//     init_TLweParams_array(nbelts,obj,N,k,alpha_min,alpha_max);
+//     return obj;
+// }
 
-//destroys and frees the TLweParams structure
-//(equivalent of the C++ delete)
-EXPORT void delete_TLweParams(TLweParams* obj) {
-    delete obj;
-}
-EXPORT void delete_TLweParams_array(int32_t nbelts, TLweParams* obj) {
-    destroy_TLweParams_array(nbelts,obj);
-    free_TLweParams_array(nbelts,obj);
-}
-#include "polynomials.h" 
+// //destroys and frees the TLweParams structure
+// //(equivalent of the C++ delete)
+// EXPORT void delete_TLweParams(TLweParams* obj) {
+//     delete obj;
+// }
+// EXPORT void delete_TLweParams_array(int32_t nbelts, TLweParams* obj) {
+//     destroy_TLweParams_array(nbelts,obj);
+//     free_TLweParams_array(nbelts,obj);
+// }
+//#include "polynomials.h" 
 //allocate memory space for a TorusPolynomial
 
 // EXPORT TorusPolynomial* alloc_TorusPolynomial() {

@@ -4,21 +4,22 @@
 ///@file
 ///@brief tfhe gate bootstrapping api
 
-#include "tfhe_gate_bootstrapping_structures.h"
+//#include "tfhe_gate_bootstrapping_structures.h"
 
 //////////////////////////////////////////
 // Gate bootstrapping public interface
 //////////////////////////////////////////
 
 /** generate default gate bootstrapping parameters */
-EXPORT TFheGateBootstrappingParameterSet *new_default_gate_bootstrapping_parameters(int32_t minimum_lambda);
+//EXPORT TFheGateBootstrappingParameterSet *new_default_gate_bootstrapping_parameters(int32_t minimum_lambda);
+EXPORT LweParams *new_default_gate_bootstrapping_parameters(int32_t minimum_lambda);
 
 // /** generate a random gate bootstrapping secret key */
 // EXPORT TFheGateBootstrappingSecretKeySet *
 // new_random_gate_bootstrapping_secret_keyset(const TFheGateBootstrappingParameterSet *params);
 
 /** deletes gate bootstrapping parameters */
-EXPORT void delete_gate_bootstrapping_parameters(TFheGateBootstrappingParameterSet *params);
+//EXPORT void delete_gate_bootstrapping_parameters(TFheGateBootstrappingParameterSet *params);
 
 // /** deletes a gate bootstrapping secret key */
 // EXPORT void delete_gate_bootstrapping_secret_keyset(TFheGateBootstrappingSecretKeySet *keyset);
@@ -27,10 +28,12 @@ EXPORT void delete_gate_bootstrapping_parameters(TFheGateBootstrappingParameterS
 // EXPORT void delete_gate_bootstrapping_cloud_keyset(TFheGateBootstrappingCloudKeySet *keyset);
 
 /** generate a new unititialized ciphertext */
-EXPORT LweSample *new_gate_bootstrapping_ciphertext(const TFheGateBootstrappingParameterSet *params);
+//EXPORT LweSample *new_gate_bootstrapping_ciphertext(const TFheGateBootstrappingParameterSet *params);
+EXPORT LweSample *new_gate_bootstrapping_ciphertext(const LweParams *params);
 
 /** generate a new unititialized ciphertext array of length nbelems */
-EXPORT LweSample *new_gate_bootstrapping_ciphertext_array(int32_t nbelems, const TFheGateBootstrappingParameterSet *params);
+//EXPORT LweSample *new_gate_bootstrapping_ciphertext_array(int32_t nbelems, const TFheGateBootstrappingParameterSet *params);
+EXPORT LweSample *new_gate_bootstrapping_ciphertext_array(int32_t nbelems, const LweParams *params);
 
 // /** deletes a ciphertext */
 // EXPORT void delete_gate_bootstrapping_ciphertext(LweSample *sample);
@@ -39,11 +42,11 @@ EXPORT LweSample *new_gate_bootstrapping_ciphertext_array(int32_t nbelems, const
 // EXPORT void delete_gate_bootstrapping_ciphertext_array(int32_t nbelems, LweSample *samples);
 
 /** encrypts a boolean */
-EXPORT void bootsSymEncrypt(LweSample *result, int32_t message, const TFheGateBootstrappingSecretKeySet *params);
+//EXPORT void bootsSymEncrypt(LweSample *result, int32_t message, const TFheGateBootstrappingSecretKeySet *params);
 EXPORT void bootsSymEncrypt_(LweSample *result, int32_t message, const LweKey *params);
 
 /** decrypts a boolean */
-EXPORT int32_t bootsSymDecrypt(const LweSample *sample, const TFheGateBootstrappingSecretKeySet *params);
+//EXPORT int32_t bootsSymDecrypt(const LweSample *sample, const TFheGateBootstrappingSecretKeySet *params);
 EXPORT int32_t bootsSymDecrypt_(const LweSample *sample, const LweKey *params);
 
 // /** bootstrapped Constant (true or false) trivial Gate */

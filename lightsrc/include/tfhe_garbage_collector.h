@@ -16,17 +16,17 @@
  */
 class TfheGarbageCollector {
     std::vector<LweParams *> lwe_params;
-    std::vector<TLweParams *> tlwe_params;
-    std::vector<TGswParams *> tgsw_params;
-    std::vector<TFheGateBootstrappingParameterSet *> gb_params;
+    //std::vector<TLweParams *> tlwe_params;
+    //std::vector<TGswParams *> tgsw_params;
+    //std::vector<TFheGateBootstrappingParameterSet *> gb_params;
 
     void m_register_param(LweParams *param);
 
-    void m_register_param(TLweParams *param);
+    //void m_register_param(TLweParams *param);
 
-    void m_register_param(TGswParams *param);
+    //void m_register_param(TGswParams *param);
 
-    void m_register_param(TFheGateBootstrappingParameterSet *param);
+    //void m_register_param(TFheGateBootstrappingParameterSet *param);
 
     //TODO: parallelization
     static TfheGarbageCollector *global_tfheGarbageCollector;
@@ -42,15 +42,15 @@ public:
 
     /** adds a parameter to the list of managed parameters */
     //TODO: parallelization
-    static void register_param(TLweParams *param);
+    //static void register_param(TLweParams *param);
 
     /** adds a parameter to the list of managed parameters */
     //TODO: parallelization
-    static void register_param(TGswParams *param);
+    //static void register_param(TGswParams *param);
 
     /** adds a parameter to the list of managed parameters */
     //TODO: parallelization
-    static void register_param(TFheGateBootstrappingParameterSet *param);
+    //static void register_param(TFheGateBootstrappingParameterSet *param);
 
     /** destroy all managed parameters */
     //TODO: parallelization
